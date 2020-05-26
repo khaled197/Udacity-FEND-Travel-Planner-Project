@@ -1,5 +1,14 @@
 // Setup empty JS object to act as endpoint for all routes
-let tripInfo = {};
+let tripInfo = {
+    'city': "",
+    'countryName': "",
+    'lat': "",
+    'lng': "",
+    'temp': "",
+    'description': "",
+    'diffDays': "",
+    'imgURL': ""
+};
 
 let path = require('path')
 

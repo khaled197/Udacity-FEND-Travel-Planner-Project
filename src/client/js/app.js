@@ -1,5 +1,6 @@
 const fetch = require("node-fetch");
 import img from '../media/pyramids.jpg';
+import {getDateDiff} from './calcDateDiff';
 const GEO_BASE_URL = 'http://api.geonames.org/searchJSON?q=city&maxRows=1&username={un}'
 const GEO_USER_NAME = 'khaled_N'
 const CURR_WEATHER_URL = 'https://api.weatherbit.io/v2.0/current?city={city}&key={api}'
@@ -20,6 +21,7 @@ async function handleSubmit(event) {
     let city_name = document.getElementById('location').value;
     let date = document.getElementById('date').value;
     let diffDays = getDateDiff(date);
+    endPoint['diffDays'] = diffDays;
     await getGeoData(city_name)
     await getWeatherData(city_name, diffDays)
     await getPixabayPhoto(city_name)
@@ -108,21 +110,6 @@ const getPixabayPhoto = async (city) => {
     }
 }
 
-/**
-* @description gets the number of days between today and the day of travelling.
-* @param {fdate} dateObject - the date of travelling.
-*/
-function getDateDiff (fDate) {
-    let a = new Date();
-    let currDate = new Date(a.getFullYear(), a.getMonth(), a.getDate());
-    let dateArray = fDate.split('-');
-    const futDate = new Date(dateArray[0], dateArray[1] - 1, dateArray[2]);
-    const diffTime = Math.abs(futDate - currDate);
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    // console.log(diffDays);
-    endPoint["diffDays"] = diffDays;
-    return diffDays;
-}
 
 /**
 * @description gets the default values of the html elements.
