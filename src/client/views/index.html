@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Travel Planner</title>
-    <meta name="viewport" content="width-device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
@@ -13,16 +13,17 @@
     </header>
     <main>
         <div id="img-div">
+            <img id="img" src="../media/pyramids.jpg" alt="">
 
         </div>
         <div id="info-div">
             <div id="input-div">
                 <form class="" onsubmit="return Client.handleSubmit(event)">
                     <span> My trip to </span>
-                    <input id="location" type="text" name="input" value="" placeholder="Enter Location">
+                    <input id="location" type="text" name="input" value="" placeholder="Enter Location" required>
                     <span> Departing </span>
-                    <input id="date" type="date" name="input" value="">
-                    <input id="submit-btn" type="submit" name="" value="add trip" >
+                    <input id="date" type="date" name="input" value="" min="2020-05-26" required>
+                    <input id="submit-btn" type="submit" name="" onsubmit="return Client.handleSubmit(event)" value="add trip">
                     <input id="rm-btn" type="button" name="" value="remove trip">
                 </form>
             </div>
