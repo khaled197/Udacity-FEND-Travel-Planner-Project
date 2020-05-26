@@ -25,6 +25,10 @@ module.exports = {
                 loader: "babel-loader"
             },
             {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [{loader: 'file-loader'}]
+            },
+            {
                 test: /\.scss$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
             }

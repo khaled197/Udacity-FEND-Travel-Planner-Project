@@ -1,13 +1,20 @@
-import {handleSubmit} from './js/app'
+import {handleSubmit} from './js/app';
 import {removeTrip} from './js/app'
-import {setDateStartLimit} from './js/app'
+import {setDefaultAttributes} from './js/app'
+import {getGeoData} from './js/app'
+import 'regenerator-runtime/runtime';
+import './styles/resets.scss'
+import './styles/style.scss'
+import './styles/header.scss'
 
 
-setDateStartLimit();
+setDefaultAttributes();
+
 document.getElementById('rm-btn').addEventListener('click',removeTrip);
 
 export {
     handleSubmit,
     removeTrip,
-    setDateStartLimit
+    setDefaultAttributes,
+    getGeoData
 }

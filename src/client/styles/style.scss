@@ -1,0 +1,23 @@
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#img-div{
+    margin: 20px;
+}
+
+#info-div{
+    margin: 20px;
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  #input-div{
+      height: 50%;
+  }
+ #result-div{
+     height:50%;
+ }
