@@ -21,3 +21,12 @@ main {
  #result-div{
      height:50%;
  }
+
+
+ #submit-btn, #rm-btn{
+     transition-duration: 0.4s;
+
+    &:hover{
+        background-color: #00FFFF;
+    }
+}
