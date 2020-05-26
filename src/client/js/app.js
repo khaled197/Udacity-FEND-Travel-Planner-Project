@@ -14,7 +14,7 @@ function handleSubmit(event) {
 
     let city_name = document.getElementById('location').value;
     let date = document.getElementById('date').value;
-    diffDays = getDateDiff(date);
+    let diffDays = getDateDiff(date);
     getGeoData(city_name).then(function(){getWeatherData(city_name,diffDays)}).then(function(){getPixabayPhoto(city_name)}).then(function(){updateUI()});
 
 }

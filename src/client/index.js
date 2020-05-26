@@ -5,3 +5,9 @@ import {setDateStartLimit} from './js/app'
 
 setDateStartLimit();
 document.getElementById('rm-btn').addEventListener('click',removeTrip);
+
+export {
+    handleSubmit,
+    removeTrip,
+    setDateStartLimit
+}
