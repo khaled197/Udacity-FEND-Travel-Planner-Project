@@ -1,7 +1,7 @@
 import {handleSubmit} from './js/app';
 import {removeTrip} from './js/app'
 import {setDefaultAttributes} from './js/app'
-import {getGeoData} from './js/app'
+import {getGeoData} from './js/getGeonamesData'
 import 'regenerator-runtime/runtime';
 import './styles/resets.scss'
 import './styles/style.scss'

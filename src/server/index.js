@@ -48,6 +48,7 @@ app.listen(8085, function() {
 });
 
 app.post('/addTripInfo', addTripInfo);
+app.get('/getTripInfo', getTripInfo);
 
 /**
  * @description posts data to the endpoint
@@ -56,7 +57,7 @@ app.post('/addTripInfo', addTripInfo);
  */
 function addTripInfo(req, res) {
     tripInfo = {
-        'city': req.body['countryName'],
+        'city': req.body['city'],
         'countryName': req.body['countryName'],
         'lat': req.body['lat'],
         'lng': req.body['lng'],
@@ -65,4 +66,16 @@ function addTripInfo(req, res) {
         'diffDays': req.body['diffDays'],
         'imgURL': req.body['imgURL']
     }
+    res.send(tripInfo);
 }
+
+/**
+ * @description gets data from the server
+ * @param {req} object
+ * @param {res} object
+ */
+function getTripInfo(req, res) {
+    res.send(tripInfo);
+}
+
+module.exports = app;
