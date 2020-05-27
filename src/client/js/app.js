@@ -20,7 +20,7 @@ async function handleSubmit(event) {
     event.preventDefault();
     let city_name = document.getElementById('location').value;
     let date = document.getElementById('date').value;
-    getDateDiff(date);
+    let diffDays = getDateDiff(date);
     let data = await getGeoData(city_name)
     endPoint['city'] = city_name;
     endPoint['countryName'] = data['countryName'];
